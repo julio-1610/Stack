@@ -1,5 +1,8 @@
 #include "StackArray.h"
 #include <assert.h>
+#include <iostream>
+
+using namespace std;
 
 template<typename T>
 void StackArray<T>::push(T e) {
@@ -43,4 +46,14 @@ void StackArray<T>::resize() {
 	sp = newdata + numElem;
 
 	delete[] olddata;
+}
+
+template<typename T>
+void StackArray<T>::print() {
+	assert(!empty());
+	T* n = data;
+	while(n <= sp) {
+		cout << *n << "\n";
+		n++;
+	}
 }
