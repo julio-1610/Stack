@@ -6,7 +6,7 @@
 template<typename T>
 class StackArray: public Stack<T> {
 	private: 
-		T data[];
+		T* data;
 		int size;
 		T* sp;
 		void resize();
@@ -17,5 +17,6 @@ class StackArray: public Stack<T> {
 		void pop();
 		T top();
 		bool empty();
+		void print();
 };
 #endif
