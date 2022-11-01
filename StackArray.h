@@ -6,7 +6,7 @@
 template<typename T>
 class StackArray: public Stack<T> {
 	private: 
-		T[] data;
+		T* data;
 		int size;
 		T* sp;
 		void resize();
