@@ -1,10 +1,12 @@
 #include "List.h"
 #include <iostream>
+#include <assert.h>
 
 using namespace std;
 
 List::List(){
   last = nullptr;
+  assert(size() == 0);
 }
 
 List* List::append(int e){
@@ -12,6 +14,8 @@ List* List::append(int e){
     last = new Node;
     last->data = e;
     last->next = last;
+    assert(size() == 1);
+    assert(head() == e);
     return this;
   }
   Node* n = new Node;
@@ -20,9 +24,12 @@ List* List::append(int e){
   last->next = n;
   last = n;
   return this;
+  assert(size() > 0);
+  assert(!isEmpty());
 }
 
 int List::head(){
+  assert(!isEmpty());
   return last->next->data;
 }
 
@@ -39,14 +46,11 @@ int List::size(){
 }
 
 bool List::isEmpty() {
-	if(this->last == nullptr) {
-		return true;
-	}
-	return false;
+	return this->last == nullptr;
 }
 
 void List::print() {
-  if(isEmpty()) { return; }
+  assert(!isEmpty());
   Node* iter = last;
   while(iter){
     iter = iter->next;
@@ -58,7 +62,7 @@ void List::print() {
 
 int List::index(int k) {
   int s = size();
-  if(k < 0 && k >= s) { return -1; }
+  assert(!(k < 0 && k >= s));
   
   int i = 0;
   Node* iter = last;

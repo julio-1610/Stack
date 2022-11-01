@@ -11,6 +11,8 @@ void StackArray<T>::push(T e) {
 	}
 	*sp = e;
 	sp++;
+	assert(!empty());
+	assert(top() == e);
 	assert(sp > data);
 }
 
