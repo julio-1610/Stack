@@ -1,6 +1,7 @@
 #include "StackArray.h"
 #include <assert.h>
 #include <iostream>
+#include <gtest/gtest.h>
 
 template<typename T>
 void StackArray<T>::push(T e) {
@@ -62,7 +63,27 @@ void StackArray<T>::print() {
 	}
 }
 
-int main() {
+class StackArrayTest: public ::testing::Test {
+	protected:
+		StackArray<int>* stack1 = new StackArray<int>(2);
+		StackArray<int>* stack2 = new StackArray<int>(1);
+		void SetUp() override {
+			stack1->push(3);
+			stack2->push(1);
+			stack2->push(9);
+		}
+};
+
+TEST_F(StackArrayTest, FunctionTests) {
+	EXPECT_EQ(stack1->top(), 3);
+	EXPECT_EQ(stack1->empty(), false);
+	stack2->pop();
+	EXPECT_EQ(stack2->top(), 1);
+	stack1->pop();
+	EXPECT_EQ(stack1->empty(), true);
+}
+
+int main(int argc, char **argv) {
 	Stack<int>* s = new StackArray<int>(2);
 	s->push(12);
 	s->push(9);
@@ -79,5 +100,6 @@ int main() {
 	stack.push(9);
 	stack.push(1);
 	stack.print();
-	return 0;
+	::testing::InitGoogleTest(&argc, argv);
+	return RUN_ALL_TESTS();
 }

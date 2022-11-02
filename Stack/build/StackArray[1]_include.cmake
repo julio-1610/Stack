@@ -1,0 +1,5 @@
+if(EXISTS "/home/julio-1610/Workspace/TO/Stack/Stack/build/StackArray[1]_tests.cmake")
+  include("/home/julio-1610/Workspace/TO/Stack/Stack/build/StackArray[1]_tests.cmake")
+else()
+  add_test(StackArray_NOT_BUILT StackArray_NOT_BUILT)
+endif()

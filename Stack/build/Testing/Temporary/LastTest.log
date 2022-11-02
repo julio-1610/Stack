@@ -1,0 +1,40 @@
+Start testing: Nov 01 22:29 -05
+----------------------------------------------------------
+1/1 Testing: StackArrayTest.FunctionTests
+1/1 Test: StackArrayTest.FunctionTests
+Command: "/home/julio-1610/Workspace/TO/Stack/Stack/build/StackArray" "--gtest_filter=StackArrayTest.FunctionTests" "--gtest_also_run_disabled_tests"
+Directory: /home/julio-1610/Workspace/TO/Stack/Stack/build
+"StackArrayTest.FunctionTests" start time: Nov 01 22:29 -05
+Output:
+----------------------------------------------------------
+1
+Stack
+12
+9
+1
+1
+Stack
+3
+4
+9
+1
+Note: Google Test filter = StackArrayTest.FunctionTests
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from StackArrayTest
+[ RUN      ] StackArrayTest.FunctionTests
+[       OK ] StackArrayTest.FunctionTests (0 ms)
+[----------] 1 test from StackArrayTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"StackArrayTest.FunctionTests" end time: Nov 01 22:29 -05
+"StackArrayTest.FunctionTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 01 22:29 -05
